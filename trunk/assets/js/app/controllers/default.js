@@ -29,8 +29,28 @@ myApp.controller('LineListCtrl', function($scope, $location, LinesFactory) {
 	
 });
 
-myApp.controller('LineDetailCtrl', function($scope, $routeParams, LinesFactory) {
-	$scope.user = LinesFactory.get({ id : $routeParams.lineId });
+myApp.controller('LineDetailCtrl', function($scope, $routeParams, $filter, LinesFactory) {
+	$scope.lines = LinesFactory.query();
+	$scope.id = $routeParams.lineId;
+	$scope.line = $filter('filter')($scope.lines, {id: 1})[0];
+	
+	 var foo =  [
+	                         {
+	                             "id": 1,
+	                             "name": "Test"
+	                         },
+	                         {
+	                             "id": 2,
+	                             "name": "Beispiel"
+	                         },
+	                         {
+	                             "id": 3,
+	                             "name": "Sample"
+	                         }
+	                     ];
+
+     $scope.single_object = $filter('filter')($scope.lines, {id: 1})[0];
+	                     
 });
 
 myApp.controller('menu3Controller', function($scope, $rootScope) {

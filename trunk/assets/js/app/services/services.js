@@ -1,8 +1,6 @@
 
 myApp.factory('LinesFactory', function($resource) {
-	return $resource('datas/lines.json');
-});
-
-myApp.factory('LineFactory', function($resource) {
-	return $resource('datas/lines.json');
+	return $resource('datas/lines.json', {}, {
+		query: { method: 'GET', isArray:true }
+	});
 });
