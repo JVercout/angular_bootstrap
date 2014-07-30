@@ -1,5 +1,10 @@
-<h1>{{title}}</h1>
+<h1 ng-bind-html="site.name"></h1>
 
+<h2> Details </h2>
+{{site.description}}
+
+
+<h2>Lines</h2>
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -18,3 +23,7 @@
 		</tr>
 	</tbody>
 </table>
+
+<h3>Maps</h3>
+<google-map center="map.center" zoom="map.zoom"></google-map>
+

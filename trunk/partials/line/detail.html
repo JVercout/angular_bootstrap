@@ -1,4 +1,9 @@
-<h1>{{line.name}}</h1>
+<h1 ng-bind-html="line.name"></h1>
 
 <h2> Details </h2>
 {{line.description}}
+
+<h2>Itinerary</h2>
+<div ng-repeat="image in line.images">
+<img class="img-responsive" ng-src="datas/img/lines/{{line.id}}/{{image}}">
+</div>

@@ -8,8 +8,12 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
 			controller	: 'mainController'
 		})
 		.when('/sites', {
-			templateUrl: 'partials/default.html',
+			templateUrl: 'partials/site/list.html',
 			controller  : 'SiteListCtrl'
+		})
+		.when('/site/:siteId', {
+			templateUrl: 'partials/site/detail.html',
+			controller: 'SiteDetailCtrl'
 		})
 		.when('/lines', {
 			templateUrl: 'partials/line/list.html',

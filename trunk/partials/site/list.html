@@ -9,11 +9,11 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="line in lines">
-			<td>{{line.id}}</td>
-			<td ng-bind-html="line.name"></td>
+		<tr ng-repeat="site in sites">
+			<td>{{site.id}}</td>
+			<td ng-bind-html="site.name"></td>
 			<td>
-				<button ng-click="detail(line.id)" class="btn btn-info btn-xs">Detail</button>
+				<button ng-click="detail(site.id)" class="btn btn-info btn-xs">Detail</button>
 			</td>
 		</tr>
 	</tbody>
